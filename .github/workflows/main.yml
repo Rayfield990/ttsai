@@ -1,0 +1,18 @@
+name: Deploy
+
+on:
+  push:
+    paths:
+      - .github/workflows/main.yml
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Build & Push Image
+      run: |
+        echo "${{ secrets.DOCKERPW }}" | docker login -u "gorsoon990" --password-stdin
+        docker image build -t gorsoon990/ttsai:v1 .
+        docker push gorsoon990/ttsai:v1

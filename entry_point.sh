@@ -9,6 +9,6 @@ nohup ./psiphon -config psiphon.config >/dev/null 2>&1 &
 sleep 10
 netstat -ntlp
 sleep 5
-curl ipinfo.io
+curl --preproxy socks5://127.0.0.1:1081 ipinfo.io
 sleep 5
 node ./index.js

@@ -11,6 +11,6 @@ netstat -ntlp
 sleep 5
 curl ipinfo.io
 sleep 5
-curl --preproxy socks5://127.0.0.1:1081 ipinfo.io
+curl --preproxy socks5://47.79.94.234:1081 ipinfo.io
 sleep 5
 node ./index.js

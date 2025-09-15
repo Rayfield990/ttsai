@@ -12,5 +12,5 @@ sleep 5
 curl ipinfo.io
 sleep 5
 curl --preproxy socks5://47.79.94.234:1081 ipinfo.io
-sleep 5
+sleep 6
 node ./index.js
